@@ -1,0 +1,161 @@
+.Model_overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0.6;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+        background: inherit;
+    }
+}
+
+.Model {
+    position: relative;
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+    height: 550px !important;
+    width: 700px !important;
+    margin: auto;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+
+    // &::before {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     border-radius: 15px;
+    //     border: 2px solid transparent;
+    //     background: $CardBorderColor;
+    //     -webkit-mask: $CardMask;
+    //     -webkit-mask-composite: destination-out;
+    //     -moz-mask: $CardMask;
+    //     -moz-mask-composite: destination-out;
+    //     mask-composite: exclude;
+    // }
+
+    .Model_section {
+        height: auto !important;
+        width: 100% !important;
+        padding: 1rem 2rem;
+
+        .Model_top_Section {
+            border-bottom: 4px solid rgb(233, 233, 233);
+
+            .title {
+                p {
+                    font-size: 1.5rem;
+                    color: rgb(70, 69, 69);
+                    font-weight: bold;
+                }
+            }
+
+            .close_div {
+                .close_icon {
+                    color: rgb(70, 69, 69);
+                    font-size: 2rem;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .Model_bottom_Section {
+            .QrCode_section {
+
+                .qrcode {
+                    height: auto;
+                    width: 20rem;
+                }
+            }
+        }
+    }
+}
+
+.Model {
+    transform: scale(0);
+    transition: all 0.4s ease-in-out;
+}
+
+.Model_overlay.show {
+    visibility: visible;
+    z-index: 900;
+    opacity: 1;
+}
+
+.Model_overlay.show>.Model {
+    visibility: visible;
+    z-index: 1000;
+    transform: scale(1);
+    opacity: 1;
+    animation: pop_swirl_forwards 0.4s ease forwards;
+}
+
+@keyframes pop_swirl_forwards {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .Model_overlay {
+        padding: 0.1rem 0.2rem;
+    }
+
+    .Model {
+        width: 100% !important;
+        height: 450px !important;
+
+        .Model_section {
+            padding: 1.1rem 1.4rem;
+
+            .Model_top_Section {
+                border-bottom: 4px solid rgb(233, 233, 233);
+
+                .title {
+                    p {
+                        font-size: 1.4rem;
+                    }
+                }
+
+                .close_div {
+                    .close_icon {
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+
+            .Model_bottom_Section {
+                .QrCode_section {
+
+                    .qrcode {
+                        height: auto;
+                        width: 15rem;
+                    }
+                }
+            }
+
+        }
+    }
+}

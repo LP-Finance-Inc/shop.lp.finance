@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { ShopApi } from "../../assets/api/Shop";
+import QrCodeModel from "../../Models/QrCodeModel";
 
 const Shop = () => {
+  const [QrCodeState, setQrCodeState] = useState(false);
+  const [options, setOptions] = useState({
+    ProductName: "",
+    ProductPrice: "",
+    ProductTokenType: "lpcad",
+    ProductImg: "",
+    walletAddress: "EN2CV9nCnH9nBF9GyGYG9B3haNriNBkrPo8jF4c6mzUi",
+  });
+
+  const QrCodeFun = (ProductName, ProductImg, ProductPrice) => {
+    setQrCodeState(true);
+    setOptions({
+      ...options,
+      ProductName,
+      ProductPrice,
+      ProductImg,
+    });
+  };
+
   return (
     <>
+      {QrCodeState && (
+        <QrCodeModel
+          QrCodeState={QrCodeState}
+          setQrCodeState={setQrCodeState}
+          options={options}
+        />
+      )}
+
       <div className="container Shop">
         <div className="row mt-4">
           <div className="col-12 d-flex justify-content-center align-items-center">
@@ -13,7 +41,7 @@ const Shop = () => {
           </div>
         </div>
         <div className="col-12 mt-4">
-          <div className="title">
+          <div className="title text-center">
             <h1>Welcome to LP Finance Devnet Shop </h1>
           </div>
         </div>
@@ -41,7 +69,13 @@ const Shop = () => {
                     <div className="col-12 btn_Section mt-3">
                       <div className="row d-flex justify-content-center">
                         <div className="col-7">
-                          <button>Pay</button>
+                          <button
+                            onClick={() =>
+                              QrCodeFun(list.name, list.Url, list.price)
+                            }
+                          >
+                            Pay
+                          </button>
                         </div>
                       </div>
                     </div>
