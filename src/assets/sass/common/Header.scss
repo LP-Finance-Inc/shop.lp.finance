@@ -1,0 +1,42 @@
+.navbar_component {
+    background: inherit !important;
+
+    nav {
+        padding: 0.8rem;
+        justify-content: inherit !important;
+
+        .navbar-brand {
+            flex-grow: 0 !important;
+
+            img {
+                height: 5.5rem;
+                width: auto;
+            }
+        }
+
+        .navbar-icon {
+            color: $HeaderNavIconMenu;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+
+        .left_ui_block {
+            display: flex !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 1130px) {
+    .navbar_component {
+        nav {
+            padding: 0.2rem 0.5rem;
+
+            .navbar-brand {
+                img {
+                    height: 4.8rem;
+                    width: auto;
+                }
+            }
+        }
+    }
+}

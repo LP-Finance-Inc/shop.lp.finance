@@ -1,0 +1,73 @@
+.Shop {
+    min-height: calc(100vh - 48px - 160px);
+
+    .img_section {
+
+        img {
+            height: auto;
+            width: 9rem;
+        }
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
+
+    .shop_card {
+        background: $CardBg;
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 1rem 2rem;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        .card_img {
+
+            img {
+                height: auto;
+                width: 6rem;
+                border-radius: 50%;
+            }
+        }
+
+        .details {
+            .name {
+                color: white;
+                font-size: 1rem;
+                font-weight: 500;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .price {
+                color: white;
+            }
+        }
+
+        .btn_Section {
+            button {
+                border: none;
+                outline: none;
+                background: $ButtonBg1;
+                padding: 0.5rem 2rem;
+                width: 100%;
+                color: $ButtonColor1;
+                border-radius: 50px;
+            }
+        }
+    }
+}
