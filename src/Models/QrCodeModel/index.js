@@ -17,12 +17,12 @@ const QrCodeModel = ({ QrCodeState, setQrCodeState, options }) => {
   };
 
   const qrData = `{
-    "receiverName": "LP Devnet Shop",  
-    "imageUrl": ${options.ProductImg},
-    "tokenType": ${options.ProductTokenType},
-    "amount" :${options.ProductPrice},
-    "walletAddress": ${options.walletAddress}
-    } `;
+    "receiverName": "${options.ProductReceiverName}",  
+    "imageUrl": "${options.ProductImg}",
+    "tokenType": "${options.ProductTokenType}",
+    "amount" :"${options.ProductPrice.substr(1)}",
+    "walletAddress": "${options.walletAddress}"
+  }`;
 
   const [inputRef] = useQRCode({
     text: qrData,

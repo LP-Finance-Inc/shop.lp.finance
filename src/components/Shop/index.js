@@ -5,6 +5,7 @@ import QrCodeModel from "../../Models/QrCodeModel";
 const Shop = () => {
   const [QrCodeState, setQrCodeState] = useState(false);
   const [options, setOptions] = useState({
+    ProductReceiverName: "LP Devnet Shop",
     ProductName: "",
     ProductPrice: "",
     ProductTokenType: "lpcad",
