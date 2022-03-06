@@ -24,6 +24,8 @@ const QrCodeModel = ({ QrCodeState, setQrCodeState, options }) => {
     "walletAddress": "${options.walletAddress}"
   }`;
 
+  console.log(qrData);
+
   const [inputRef] = useQRCode({
     text: qrData,
     options: options ? options : { ...defaultOptions },

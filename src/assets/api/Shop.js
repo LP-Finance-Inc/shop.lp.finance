@@ -32,13 +32,13 @@ export const ShopApi = [
     img: "/images/shop/gatorade.png",
     Url: "https://drive.google.com/file/d/13AzIEuiPUP70TOxm9XIPM88KOdK5YOwP/view?usp=sharing",
     name: "Gatorade Cool Blue Sports Drink",
-    price: " $5.97",
+    price: "$5.97",
   },
   {
     id: 6,
     img: "/images/shop/nestea.png",
     Url: "https://drive.google.com/file/d/1GFDu_5PiqZTJCtwr44M2KmHyOWVPBEHl/view?usp=sharing",
     name: "Nestea Lemon 1.75L Carton",
-    price: " $1.97",
+    price: "$1.97",
   },
 ];
